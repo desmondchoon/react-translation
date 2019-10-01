@@ -1,5 +1,5 @@
 {
-  "name": "react-translation",
+  "name": "simple-react-translation",
   "version": "0.0.1",
   "description": "A simple React translation.",
   "main": "dist/index.js",
@@ -10,8 +10,8 @@
     "prepublishOnly": "babel ./src --out-dir ./dist -s inline"
   },
   "repository": {
-    "type" : "git",
-    "url" : "https://github.com/desmondchoon/react-translation"
+    "type": "git",
+    "url": "https://github.com/desmondchoon/react-translation"
   },
   "author": "Desmond Chin",
   "license": "MIT",
