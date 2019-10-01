@@ -1,2 +1,2 @@
-# react-translation
-A simple React translation
+# simple-react-translate
+A simple React translation.
