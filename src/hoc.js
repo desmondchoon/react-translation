@@ -70,6 +70,8 @@ function TranslateHOC(WrappedComponent, globalProps, namespaces) {
         render() {
             return <WrappedComponent {...this.props} {...globalProps}
                 t={(string) => {
+                    console.log(string);
+                    console.log(this.state.languages);
                     return this.state.languages[string.split(".")[0]] && this.state.languages[string.split(".")[0]][string.split(".")[1]]
                         ? this.state.languages[string.split(".")[0]][string.split(".")[1]]
                         : ""
@@ -77,7 +79,8 @@ function TranslateHOC(WrappedComponent, globalProps, namespaces) {
                 changeLang={(lang)=>{
                     if(typeof window !== 'undefined'){
                         window.localStorage.setItem('_lang',lang);
-                        this.setState({loadLang: true});
+                        window.location.reload();
+                        // this.setState({loadLang: true});
                     }
                 }}
             />;
