@@ -44,7 +44,7 @@ function TranslateHOC(WrappedComponent, globalProps, namespaces) {
             let languages = {};
             for (let n = 0; n < namespaces.length; n++) {
                 let namespace = namespaces[n];
-                const response = await fetch(`${path}/${window.localStorage.getItem('_lang')}/${namespace}.json`)
+                const response = await fetch(`${window.location.protocol+'//'+window.location.hostname+(window.location.port ? ':'+location.port: '')}${path}/${window.localStorage.getItem('_lang')}/${namespace}.json`)
                 const data = await response.json();
                 languages = {
                     ...languages,
@@ -70,8 +70,6 @@ function TranslateHOC(WrappedComponent, globalProps, namespaces) {
         render() {
             return <WrappedComponent {...this.props} {...globalProps}
                 t={(string) => {
-                    console.log(string);
-                    console.log(this.state.languages);
                     return this.state.languages[string.split(".")[0]] && this.state.languages[string.split(".")[0]][string.split(".")[1]]
                         ? this.state.languages[string.split(".")[0]][string.split(".")[1]]
                         : ""
