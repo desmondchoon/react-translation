@@ -1,6 +1,6 @@
 {
   "name": "simple-react-translation",
-  "version": "0.0.1",
+  "version": "0.0.4",
   "description": "A simple React translation.",
   "main": "dist/index.js",
   "scripts": {
